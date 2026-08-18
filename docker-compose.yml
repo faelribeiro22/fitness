@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: fitness
+      POSTGRES_PASSWORD: fitness
+      POSTGRES_DB: fitness
+    ports:
+      - '5433:5432'
+    volumes:
+      - fitness-postgres:/var/lib/postgresql/data
+
+volumes:
+  fitness-postgres:
