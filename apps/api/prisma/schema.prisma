@@ -1,0 +1,64 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Exercise {
+  id               String            @id @default(cuid())
+  source           String
+  sourceId         String
+  name             String
+  muscleGroup      String
+  secondaryMuscles String[]
+  equipment        String
+  difficulty       String?
+  instructions     String[]
+  image            String?
+  video            String?
+  workoutExercises WorkoutExercise[]
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  @@unique([source, sourceId])
+  @@index([muscleGroup])
+  @@index([equipment])
+}
+
+model Workout {
+  id        String       @id @default(cuid())
+  name      String
+  days      WorkoutDay[]
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+}
+
+model WorkoutDay {
+  id        String            @id @default(cuid())
+  workoutId String
+  weekday   Int
+  focus     String[]
+  isRest    Boolean           @default(false)
+  workout   Workout           @relation(fields: [workoutId], references: [id], onDelete: Cascade)
+  exercises WorkoutExercise[]
+
+  @@unique([workoutId, weekday])
+}
+
+model WorkoutExercise {
+  id         String     @id @default(cuid())
+  workoutDayId String
+  exerciseId String
+  position   Int
+  sets       Int        @default(3)
+  reps       String     @default("8-12")
+  restSeconds Int       @default(60)
+  workoutDay WorkoutDay @relation(fields: [workoutDayId], references: [id], onDelete: Cascade)
+  exercise   Exercise   @relation(fields: [exerciseId], references: [id], onDelete: Restrict)
+
+  @@unique([workoutDayId, position])
+}
