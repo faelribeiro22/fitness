@@ -1,0 +1,24 @@
+# Railway Database Configuration
+# This file documents the PostgreSQL database setup for Railway
+
+# Railway automatically creates PostgreSQL databases when you add a PostgreSQL service
+# The DATABASE_URL environment variable will be automatically set by Railway
+
+# To add a PostgreSQL database to your Railway project:
+# 1. Go to your Railway project
+# 2. Click "New Service" 
+# 3. Select "Database" 
+# 4. Choose "PostgreSQL"
+# 5. Railway will provide the DATABASE_URL automatically
+
+# Database Configuration
+[database]
+name = "fitness-db"
+region = "us-east-1"
+
+# Environment Variables (automatically set by Railway)
+# DATABASE_URL = "postgresql://user:password@host:port/database"
+# These will be automatically available to your API service
+
+# For local development, use:
+# DATABASE_URL="postgresql://postgres:postgres@localhost:5432/fitness_dev"

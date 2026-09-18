@@ -11,7 +11,6 @@ Também irá capturar informações do sistema android com o Health Connect
 - Administradores
 - Usuários
 
-
 ## Domínios principais
 
 - Planejamento
@@ -47,8 +46,7 @@ Também irá capturar informações do sistema android com o Health Connect
 
   Ou:
 
-    "Você dormiu menos de 6 horas nas últimas três noites. Talvez hoje seja melhor reduzir a carga."
-
+  "Você dormiu menos de 6 horas nas últimas três noites. Talvez hoje seja melhor reduzir a carga."
 
 ## Princípios
 

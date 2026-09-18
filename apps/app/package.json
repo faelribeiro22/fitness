@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "dependencies": {
     "@expo/ui": "~57.0.8",
+    "@better-auth/expo": "^1.7.5",
     "expo": "~57.0.9",
     "expo-constants": "~57.0.8",
     "expo-dev-client": "~57.0.10",
@@ -11,6 +12,7 @@
     "expo-font": "~57.0.1",
     "expo-glass-effect": "~57.0.1",
     "expo-image": "~57.0.1",
+    "expo-image-picker": "~57.0.14",
     "expo-linking": "~57.0.4",
     "expo-router": "~57.0.9",
     "expo-splash-screen": "~57.0.5",
@@ -47,6 +49,10 @@
     "ios:device": "expo run:ios --device",
     "build:development:android": "npx eas-cli@latest build --profile development --platform android",
     "build:development:ios": "npx eas-cli@latest build --profile development --platform ios",
+    "build:production:android": "npx eas-cli@latest build --profile production --platform android",
+    "build:production:ios": "npx eas-cli@latest build --profile production --platform ios",
+    "eas:build": "npx eas-cli@latest build",
+    "eas:submit": "npx eas-cli@latest submit",
     "build": "expo export --platform web",
     "lint": "expo lint",
     "check-types": "tsc --noEmit"

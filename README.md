@@ -50,3 +50,27 @@ Ao desenvolver pelo WSL, use o túnel para que o dispositivo físico consiga alc
 ```bash
 pnpm --filter @fitness/mobile dev:tunnel
 ```
+
+## For Code Agents
+
+If you are an AI agent (Claude, Devin, Copilot, etc.) working on this project, please start by reading the **PROJECT_GUIDE.md** file at the project root. This document provides universal guidance for any code agent working on this codebase.
+
+The project uses a centralized `.guidelines/` directory (formerly `.ai/`) that contains:
+
+- **Agent definitions** - Specialized roles with standardized formats
+- **Context files** - Project context, tech stack, and relationships
+- **Rules** - Architecture rules, global rules, and validation checklists
+- **Workflows** - Feature development workflow and command patterns
+- **Templates** - ADR and feature specification templates
+
+All guidelines are designed to be tool-agnostic and can be followed by any AI agent.
+
+**Quick Start for Code Agents:**
+
+1. Read `PROJECT_GUIDE.md` (project root)
+2. Explore `.guidelines/` directory structure
+3. Follow the reading order in `.guidelines/context/CONTEXT_INDEX.md`
+4. Apply the appropriate agent rules for your task
+5. Follow the development workflow in `.guidelines/workflows/feature-development.md`
+
+This ensures consistency, quality, and architectural integrity regardless of which AI tool is used.

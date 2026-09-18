@@ -4,10 +4,12 @@ import { AppService } from './app.service';
 import { PrismaService } from './prisma.service';
 import { WorkoutsController } from './workouts.controller';
 import { WorkoutsService } from './workouts.service';
+import { AuthModule } from './auth/auth.module';
+import { AuthController } from './auth/auth.controller';
 
 @Module({
-  imports: [],
-  controllers: [AppController, WorkoutsController],
+  imports: [AuthModule],
+  controllers: [AppController, WorkoutsController, AuthController],
   providers: [AppService, PrismaService, WorkoutsService],
 })
 export class AppModule {}
